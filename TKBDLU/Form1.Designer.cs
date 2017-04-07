@@ -44,7 +44,7 @@
             this.cbbTerm = new DevExpress.XtraEditors.LookUpEdit();
             this.cbbWeek = new DevExpress.XtraEditors.LookUpEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.wbTKB = new System.Windows.Forms.WebBrowser();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
@@ -116,6 +116,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // labelControl10
             // 
@@ -230,6 +231,7 @@
             this.cbbClass.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.cbbClass.Size = new System.Drawing.Size(147, 20);
             this.cbbClass.TabIndex = 2;
+            this.cbbClass.EditValueChanged += new System.EventHandler(this.cbbClass_EditValueChanged);
             // 
             // cbbYear
             // 
@@ -246,6 +248,7 @@
             this.cbbYear.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.cbbYear.Size = new System.Drawing.Size(170, 20);
             this.cbbYear.TabIndex = 2;
+            this.cbbYear.EditValueChanged += new System.EventHandler(this.cbbYear_EditValueChanged);
             // 
             // cbbTerm
             // 
@@ -258,6 +261,7 @@
             this.cbbTerm.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.cbbTerm.Size = new System.Drawing.Size(170, 20);
             this.cbbTerm.TabIndex = 2;
+            this.cbbTerm.EditValueChanged += new System.EventHandler(this.cbbTerm_EditValueChanged);
             // 
             // cbbWeek
             // 
@@ -265,11 +269,14 @@
             this.cbbWeek.Name = "cbbWeek";
             this.cbbWeek.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbbWeek.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DisPlayWeek", "Chọn tuần ?")});
             this.cbbWeek.Properties.NullText = "";
             this.cbbWeek.Properties.PopupSizeable = false;
             this.cbbWeek.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.cbbWeek.Size = new System.Drawing.Size(170, 20);
             this.cbbWeek.TabIndex = 2;
+            this.cbbWeek.EditValueChanged += new System.EventHandler(this.cbbWeek_EditValueChanged);
             // 
             // panelControl2
             // 
@@ -279,20 +286,20 @@
             this.panelControl2.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.panelControl2.Appearance.Options.UseBackColor = true;
             this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
-            this.panelControl2.Controls.Add(this.labelControl11);
+            this.panelControl2.Controls.Add(this.wbTKB);
             this.panelControl2.Location = new System.Drawing.Point(245, 60);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(664, 377);
             this.panelControl2.TabIndex = 1;
             // 
-            // labelControl11
+            // wbTKB
             // 
-            this.labelControl11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl11.Location = new System.Drawing.Point(2, 2);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(49, 13);
-            this.labelControl11.TabIndex = 0;
-            this.labelControl11.Text = "Loading...";
+            this.wbTKB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wbTKB.Location = new System.Drawing.Point(2, 2);
+            this.wbTKB.MinimumSize = new System.Drawing.Size(20, 20);
+            this.wbTKB.Name = "wbTKB";
+            this.wbTKB.Size = new System.Drawing.Size(660, 373);
+            this.wbTKB.TabIndex = 1;
             // 
             // labelControl1
             // 
@@ -352,6 +359,7 @@
             // pictureEdit4
             // 
             this.pictureEdit4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureEdit4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureEdit4.EditValue = global::TKBDLU.Properties.Resources.gmail;
             this.pictureEdit4.Location = new System.Drawing.Point(626, 23);
             this.pictureEdit4.Name = "pictureEdit4";
@@ -362,10 +370,12 @@
             this.pictureEdit4.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit4.Size = new System.Drawing.Size(31, 31);
             this.pictureEdit4.TabIndex = 4;
+            this.pictureEdit4.Click += new System.EventHandler(this.pictureEdit4_Click);
             // 
             // pictureEdit3
             // 
             this.pictureEdit3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureEdit3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureEdit3.EditValue = global::TKBDLU.Properties.Resources.skype;
             this.pictureEdit3.Location = new System.Drawing.Point(587, 23);
             this.pictureEdit3.Name = "pictureEdit3";
@@ -376,10 +386,12 @@
             this.pictureEdit3.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit3.Size = new System.Drawing.Size(31, 31);
             this.pictureEdit3.TabIndex = 4;
+            this.pictureEdit3.Click += new System.EventHandler(this.pictureEdit3_Click);
             // 
             // pictureEdit2
             // 
             this.pictureEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureEdit2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureEdit2.EditValue = global::TKBDLU.Properties.Resources.fb;
             this.pictureEdit2.Location = new System.Drawing.Point(550, 23);
             this.pictureEdit2.Name = "pictureEdit2";
@@ -390,6 +402,7 @@
             this.pictureEdit2.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit2.Size = new System.Drawing.Size(31, 31);
             this.pictureEdit2.TabIndex = 4;
+            this.pictureEdit2.Click += new System.EventHandler(this.pictureEdit2_Click);
             // 
             // labelControl6
             // 
@@ -469,7 +482,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbbWeek.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            this.panelControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
@@ -506,13 +518,13 @@
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.LookUpEdit cbbType;
         private DevExpress.XtraEditors.LookUpEdit cbbClass;
         private DevExpress.XtraEditors.LookUpEdit cbbYear;
         private DevExpress.XtraEditors.LookUpEdit cbbTerm;
         private DevExpress.XtraEditors.LookUpEdit cbbWeek;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.WebBrowser wbTKB;
     }
 }
 
