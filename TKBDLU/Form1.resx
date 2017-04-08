@@ -117,4 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AAD////////////////+////7ff1/9ft3P+k2sv/kc+7/6Tf3f+z5uv/3fT7//H7///9/v//////////
+        ///////////////////3/P//yfDr/23Ho/82lBz/M4gA/0GSE/9mrVP/cbVs/4HOxv+b3Nz/1PH1//X8
+        ///////////////////2/P//rufj/z3Hov8gu3f/MqU7/z2OAP9PnSn/msmP/6nRm/+azqT/bbNp/4TK
+        sf/E6/L/9fz////////+/v//zfDy/0nLs/8gv4H/I8GD/ybAgf82mSH/WqM+/7fh0f/s+v7/0e7t/5vN
+        n/98vYP/m9zl/9by+v/8/v//7vr8/37b4/9Q0cP/Tc+6/y/Ekv8jwYT/K7Be/1efPP+s3c//z/H8/8rv
+        +/++6/X/o9Wq/3G1b/+Z2tf/8fv//9jz9/9Nz83/WdPJ/1rTy/9a1M3/MseY/yW5bP9NpUH/i9PO/6Lj
+        +f/E7fn/uOr6/8bo4P97uGz/esey/9z0/P+s5/X/f9zb/8Ds8v+x6PL/hd3f/1rUy/8qvn3/Ra1Y/4fR
+        zP+L3fn/oeL4/8bt+v/a9Pz/w+HF/4jEkv+x5e3/q+X5/7rp+//W8vz/z/D8/8jt/f+C3Of/Rsqn/zex
+        aP9vysr/kt/6/5ng+P/C7Pr/5ff9/7jbtv92uHT/p+Hp/63m+v+46fn/4PX8/9z0+//B7Pr/meD5/2HS
+        0P8+uYD/ccnI/4/e+v+W3/j/wev6/9Hx/P+/5Nr/n9fI/6zl9f+06Pv/s+f5/+D1/P/U8fv/xe36/6Ti
+        +f972Ov/U8Sf/37Oyf+N3fn/o+P4/77r+f/B6/r/1vL7/7jq+v+06Pr/3fT8/5jg+P/G7fr/0fH6/7Xo
+        +f/E7fr/nuL2/3TPwf+E08//o+P6/8Xt+v+76vn/yu76/8Ls+v+X3/j/2/T8//D6/v+j4/n/tej5/9Dw
+        +/+/6/n/y+/6/87w/P+i39v/p+Db/8ju+//a8/v/5Pb8/9vz+/+16Pn/ouP5//D6/v/8/v7/1/L8/53h
+        +P+66vn/1PL7/+L1/P/l9/3/uerq/7Dn6v/D7Pr/5/f8/9nz+/+56fn/neH4/9by/P/8/v7///////T8
+        /v/H7vv/nuH4/7Xo+f/F7vr/2fD7/6S87v+iw+//1PH7/8fu+v+06Pn/neH4/8bt+//0+/7/////////
+        ////////9fz+/9fy/P+j4/n/l+D4/6nZ9v9RZOP/Xnbm/7Df9/+X4Pj/ouP5/9by/P/0/P7/////////
+        ///////////////////8/v7/8Pr+/971/P+16fr/nM32/5zP9v+16fr/3fX8//D6/v/8/v7/////////
+        ////////AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
+        //8AAP//AAD//w==
+</value>
+  </data>
 </root>

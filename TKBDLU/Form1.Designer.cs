@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
@@ -57,6 +58,7 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.btnSetDefault = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -87,6 +89,7 @@
             this.panelControl1.Appearance.Options.UseBackColor = true;
             this.panelControl1.Appearance.Options.UseBorderColor = true;
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl1.Controls.Add(this.btnSetDefault);
             this.panelControl1.Controls.Add(this.pictureBox1);
             this.panelControl1.Controls.Add(this.labelControl10);
             this.panelControl1.Controls.Add(this.labelControl9);
@@ -210,7 +213,7 @@
             this.cbbType.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "Chọn thời khóa biểu bạn muốn xem!"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "Name14", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default)});
-            this.cbbType.Properties.DropDownRows = 4;
+            this.cbbType.Properties.DropDownRows = 2;
             this.cbbType.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoComplete;
             this.cbbType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.cbbType.ShowToolTips = false;
@@ -256,6 +259,9 @@
             this.cbbTerm.Name = "cbbTerm";
             this.cbbTerm.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbbTerm.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Display", "Chọn học kỳ?")});
+            this.cbbTerm.Properties.DropDownRows = 3;
             this.cbbTerm.Properties.NullText = "";
             this.cbbTerm.Properties.PopupSizeable = false;
             this.cbbTerm.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
@@ -270,7 +276,8 @@
             this.cbbWeek.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbbWeek.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DisPlayWeek", "Chọn tuần ?")});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DisPlayWeek", "Chọn tuần ?", 20, DevExpress.Utils.FormatType.None, "Tuần", true, DevExpress.Utils.HorzAlignment.Default)});
+            this.cbbWeek.Properties.DropDownRows = 5;
             this.cbbWeek.Properties.NullText = "";
             this.cbbWeek.Properties.PopupSizeable = false;
             this.cbbWeek.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
@@ -458,6 +465,15 @@
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Dữ liệu được lấy từ: ";
             // 
+            // btnSetDefault
+            // 
+            this.btnSetDefault.Location = new System.Drawing.Point(122, 243);
+            this.btnSetDefault.Name = "btnSetDefault";
+            this.btnSetDefault.Size = new System.Drawing.Size(115, 23);
+            this.btnSetDefault.TabIndex = 5;
+            this.btnSetDefault.Text = "Đặt làm mặc định ";
+            this.btnSetDefault.Click += new System.EventHandler(this.btnSetDefault_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -467,8 +483,9 @@
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Xem Thời Khóa Biểu Đại Học Đà Lạt";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
@@ -525,6 +542,7 @@
         private DevExpress.XtraEditors.LookUpEdit cbbWeek;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.WebBrowser wbTKB;
+        private DevExpress.XtraEditors.SimpleButton btnSetDefault;
     }
 }
 

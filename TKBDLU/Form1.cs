@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Threading;
 using System.Windows.Forms;
 using DevExpress.Utils.Text;
 using DevExpress.XtraEditors.Controls;
@@ -182,8 +183,8 @@ namespace TKBDLU
             frmAddClass frm = new frmAddClass(listClass.Count);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                listClass.Add(new ClassTKB { ID = frm.ClassName, DisplayClass = frm.ClassName, Active = true });
-                indexClassActive++;
+                listClass.Add(new ClassTKB { ID = frm.ClassName, DisplayClass = frm.ClassName, Active = false });
+                indexClassActive = listClass.Count - 1;
             }
             frm.Dispose();
             writeFileClass();
@@ -201,15 +202,17 @@ namespace TKBDLU
             using (var webClient = new System.Net.WebClient())
             {
                 webClient.Encoding = System.Text.Encoding.UTF8;
-                var html = webClient.DownloadString("http://qlgd.dlu.edu.vn/public/DrawingClassStudentSchedules_Mau2?YearStudy="+cbbYear.EditValue+"&TermID="+cbbTerm.EditValue+"&Week="+cbbWeek.EditValue+"&ClassStudentID="+cbbClass.EditValue);
+                var html = webClient.DownloadString("http://qlgd.dlu.edu.vn/public/DrawingClassStudentSchedules_Mau2?YearStudy="+cbbYear.EditValue+"&TermID="+cbbTerm.EditValue+"&Week="+cbbWeek.EditValue+"&ClassStudentID="+cbbClass.EditValue).Replace("30px","80px");
                 wbTKB.DocumentText ="<style>th {font-weight: bold;text-align: -internal-center;}</style>"+ html;
             }}
 
         private bool loadFirst = true;
         private void cbbTerm_EditValueChanged(object sender, EventArgs e)
         {
-            if(!loadFirst)
+            if (!loadFirst)
+            {
                 loadTKB();
+                loadWeek();}
         }
 
         private void cbbWeek_EditValueChanged(object sender, EventArgs e)
@@ -221,7 +224,10 @@ namespace TKBDLU
         private void cbbYear_EditValueChanged(object sender, EventArgs e)
         {
             if (!loadFirst)
+            {
                 loadTKB();
+                loadWeek();
+            }
         }
         //fb
         private void pictureEdit2_Click(object sender, EventArgs e)
@@ -233,15 +239,43 @@ namespace TKBDLU
         //skype
         private void pictureEdit3_Click(object sender, EventArgs e)
         {
-            Skype skype;
-            skype = new SKYPE4COMLib.Skype();
-            string SkypeID = "tiengioiit@gmail.com";
-            Call call = skype.PlaceCall(SkypeID);
+            Thread tr = new Thread(CallSkype);
+            if(tr.ThreadState == ThreadState.Stopped)
+                tr.Start();
+            
+        }
+
+        private void CallSkype(){
+            try
+            {
+                Skype skype;
+                skype = new SKYPE4COMLib.Skype();
+                string SkypeID = "tiengioiit";
+                Call call = skype.PlaceCall(SkypeID);
+            }
+            catch
+            {
+                MessageBox.Show("Không thể mở Skype, hoặc không được cho phép!, nếu thử lại không được\n" +
+                                "Hãy tắt ứng dụng, chạy lại ứng dụng và xin phép Skype", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         //gmail
         private void pictureEdit4_Click(object sender, EventArgs e)
         {
+            frmContact frm = new frmContact();
+            frm.ShowDialog();
+        }
 
+        private void btnSetDefault_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < listClass.Count; i++)
+            {
+                if (listClass[i].ID == cbbClass.EditValue)
+                    listClass[i].Active = true;
+                else listClass[i].Active = false;
+            }
+            writeFileClass();
+            MessageBox.Show("Sét mặc định thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
